@@ -1,1 +1,25 @@
 
+import random
+import string
+l=int(input("enter the word-length of your password:"))
+
+# Validation of password length
+while l<8:
+    l=int(input("password must be at least of 8 character,enter again:"))
+
+cp=['easy','medium','hard']
+
+# Logic of code
+for i in cp:
+    print(i)
+
+c=input("enter the level of complexity of your password:")
+
+if c== "easy":
+    print("your password",''.join(random.choices(string.ascii_letters + string.digits ,k=l )))
+
+elif c=="medium":    
+    print("your password",''.join(random.choices(string.ascii_letters + string.digits + string.punctuation ,k=l )))
+    
+elif c=="hard":
+    print("your password",''.join(random.choices(string.ascii_letters + string.digits + string.punctuation + '!@&`?^$%',k=l )))
